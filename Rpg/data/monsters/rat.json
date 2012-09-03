@@ -1,0 +1,12 @@
+{
+  "name": "Rat",
+  "level": 1,
+  "exp": 1,
+  "maxHp": 8,
+  "maxMp": 0,
+  "strength": 4,
+  "defence": 1,
+  "loot": {
+    "potion": 0.8
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Gobelin",
+  "level": 1,
+  "exp": 1,
+  "maxHp": 10,
+  "maxMp": 0,
+  "strength": 5,
+  "defence": 1,
+  "loot": {
+    "potion": 0.5
+  }
+}

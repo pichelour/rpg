@@ -1,0 +1,3 @@
+[submodule "Rpg/vendor/ClassLoader"]
+	path = Rpg/vendor/ClassLoader
+	url = git://github.com/symfony/ClassLoader.git

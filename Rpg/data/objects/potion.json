@@ -1,0 +1,8 @@
+{
+  "name": "Potion",
+  "buy": 10,
+  "sell": 4,
+  "effect": {
+    "hp": "+10"
+  }
+}

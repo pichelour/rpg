@@ -1,0 +1,51 @@
+aside, section {
+	display: table-cell;
+}
+
+#map {
+	border-collapse: collapse;
+}
+
+#map td {
+	position: relative;
+	width: 60px;
+	height: 60px;
+	padding: 0;
+	border: 0;
+	vertical-align: top;
+}
+
+#map .tile {
+	display: block;
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	z-index: 1;
+}
+
+#map .tile1 {
+	background-color: #58aa66;
+}
+
+#map .tile2 {
+	background-color: #368844;
+}
+
+#map .city {
+	background-color: #aa9955;
+	display: block;
+	position: absolute;
+	width: 60px;
+	height: 45px;
+	z-index: 2;
+}
+
+#hero {
+	background-color: #124232;
+	display: block;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	margin: 40px 0 0 20px ;
+	z-index: 3;
+}
