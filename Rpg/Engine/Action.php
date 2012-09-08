@@ -4,8 +4,7 @@ namespace Rpg\Engine;
 abstract class Action
 {
 	protected $game;
-	private $template,
-	        $placeFactory;
+	private $template;
 	
 	public function __construct()
 	{
@@ -66,15 +65,6 @@ abstract class Action
 				sprintf('Template %s not found', $template)
 			);
 		}
-	}
-	
-	protected final function getPlaceFactory()
-	{
-		if (empty($this->placeFactory))
-		{
-			$this->placeFactory = new PlaceFactory($this->game);
-		}
-		return $this->placeFactory;
 	}
 	
 	protected final function redirect($action, $params = null, $urlEncode = false)

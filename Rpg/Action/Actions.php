@@ -1,7 +1,6 @@
 <?php
 namespace Rpg\Action;
 use Rpg\Engine\Action;
-use Rpg\Engine\Map;
 
 class Actions extends Action
 {
@@ -67,7 +66,7 @@ class Actions extends Action
 	
 	protected function executePlace()
 	{
-		$place = $this->getPlaceFactory()->create($this->game->getHero()->getPlaceId());
+		$place = $this->game->getNewPlace($this->game->getHero()->getPlaceId());
 		return array('place' => $place);
 	}
 	
@@ -77,7 +76,7 @@ class Actions extends Action
 		$x       = $_GET['x'];
 		$y       = $_GET['y'];
 		$placeId = !empty($_GET['place']) ? $_GET['place'] : $hero->getPlaceId();
-		$place   = $this->getPlaceFactory()->create($placeId);
+		$place   = $this->game->getNewPlace($placeId);
 
 		$hero->moveTo($place, $x, $y);
 		$this->game->setHero($hero);

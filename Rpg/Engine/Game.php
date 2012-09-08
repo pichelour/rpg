@@ -123,6 +123,11 @@ class Game
 		return json_decode(file_get_contents(__DIR__.'/../data/places/'.$id.'.json'), true);
 	}
 	
+	public function getNewPlace($id)
+	{
+		return new Place($this->getPlaceData($id), $this);
+	}
+	
 	public function loadMonster($id)
 	{
 		$data = json_decode(file_get_contents(__DIR__.'/../data/monsters/'.$id.'.json'), true);
@@ -170,8 +175,7 @@ class Game
 	
 	private function initFightMonsters()
 	{
-		$placeFactory = new PlaceFactory($this);
-		$place = $placeFactory->create($this->getHero()->getPlaceId());
+		$place    = $this->getNewPlace($this->getHero()->getPlaceId());
 		$monsters = $place->getMonsters();
 		return [uniqid() => $this->loadMonster($monsters[array_rand($monsters)])];
 	}

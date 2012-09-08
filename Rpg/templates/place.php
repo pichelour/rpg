@@ -1,7 +1,6 @@
 <?php
 use Rpg\Engine\Hero;
 use Rpg\Engine\Place;
-use Rpg\Engine\Tile;
 ?>
 
 <table id="map">

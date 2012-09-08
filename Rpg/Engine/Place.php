@@ -1,17 +1,16 @@
 <?php
 namespace Rpg\Engine;
 
-abstract class Place
+class Place
 {
 	protected $data,
 	          $game,
 	          $visibility;
 	
-	public function __construct($data, $game, $placeFactory)
+	public function __construct($data, $game)
 	{
 		$this->data = $data;
 		$this->game = $game;
-		$this->placeFactory = $placeFactory;
 	}
 	
 	public function getName()
@@ -108,7 +107,7 @@ abstract class Place
 			if ($place['x'] >= $this->getMinXVisible() && $place['x'] <= $this->getMaxXVisible()
 			 && $place['y'] >= $this->getMinYVisible() && $place['y'] <= $this->getMaxYVisible())
 			{
-				$places[$place['id']] = $this->placeFactory->create($place['id']);
+				$places[$place['id']] = $this->game->getNewPlace($place['id']);
 			}
 		}
 		return $places;
