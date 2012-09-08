@@ -20,6 +20,7 @@
 	</table>
 	<ul>
 		<li><a href="<?php echo url_action('save-hero'); ?>">Enregistrer</a></li>
+		<li><a href="<?php echo url_action('quit'); ?>">Quitter</a></li>
 	</ul>
 </aside>
 <?php endif; ?>

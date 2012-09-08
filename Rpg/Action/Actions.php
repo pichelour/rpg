@@ -59,6 +59,12 @@ class Actions extends Action
 		$this->redirect('place');
 	}
 	
+	protected function executeQuit()
+	{
+		$this->game->quit();
+		$this->redirect('title-screen');
+	}
+	
 	protected function executePlace()
 	{
 		$place = $this->getPlaceFactory()->create($this->game->getHero()->getPlaceId());

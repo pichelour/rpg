@@ -13,7 +13,12 @@ class Game
 
 	public function start()
 	{
-	    $this->action->execute();
+		$this->action->execute();
+	}
+	
+	public function quit()
+	{
+		session_destroy();
 	}
 	
 	public function setAction(Action $action)
