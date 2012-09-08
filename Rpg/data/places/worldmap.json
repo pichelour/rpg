@@ -26,5 +26,6 @@
     [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
     [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]
   ],
-  "monsters": [ "gobelin", "rat" ]
+  "monsters": [ "gobelin", "rat" ],
+  "fightPercent": 1.0
 }

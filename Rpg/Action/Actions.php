@@ -81,6 +81,10 @@ class Actions extends Action
 
 		$hero->moveTo($place, $x, $y);
 		$this->game->setHero($hero);
+		if ($this->game->timeToFight($place))
+		{
+			$this->redirect('fight');
+		}
 		$this->redirect('place');
 	}
 	

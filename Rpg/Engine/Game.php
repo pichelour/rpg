@@ -4,11 +4,13 @@ namespace Rpg\Engine;
 class Game
 {
 	private $hero   = null,
-	        $action = null;
+	        $action = null,
+	        $data   = null;
 	
 	public function __construct()
 	{
 		session_start();
+		$this->data = json_decode(file_get_contents(__DIR__.'/../data/game.json'), true);
 	}
 
 	public function start()
@@ -134,6 +136,23 @@ class Game
 		    ->setLoot($data['loot']);
 	}
 	
+	public function timeToFight($place)
+	{
+		if (!$place->hasMonsters())
+		{
+			unset($_SESSION['fightPercent']);
+			return false;
+		}
+		
+		if (empty($_SESSION['fightPercent']))
+		{
+			$_SESSION['fightPercent'] = $this->data['fightPercent'];
+		}
+		$_SESSION['fightPercent'] += $place->getFightPercent();
+		
+		return rand(0, 100) < $_SESSION['fightPercent'];
+	}
+	
 	public function getCurrentFight()
 	{
 		if (empty($_SESSION['fight']))
@@ -165,6 +184,7 @@ class Game
 			$hero->addExp($monster->getExp());
 		}
 		$this->setHero($hero);
+		unset($_SESSION['fightPercent']);
 		unset($_SESSION['fight']);
 	}
 	

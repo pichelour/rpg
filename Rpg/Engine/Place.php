@@ -24,9 +24,19 @@ abstract class Place
 		return $this->data['id'];
 	}
 	
+	public function hasMonsters()
+	{
+		return isset($this->data['monsters']);
+	}
+	
 	public function getMonsters()
 	{
 		return $this->data['monsters'];
+	}
+	
+	public function getFightPercent()
+	{
+		return $this->data['fightPercent'];
 	}
 	
 	public function isReachable($x, $y)
